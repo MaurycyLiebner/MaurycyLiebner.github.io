@@ -2,6 +2,7 @@ You can use enve to create vector animations, raster animations, and even use so
 Enve was created with flexibility and expandability in mind.
 <br/>
 <h1 align="center">Support and spread the news!</h1>
+<br/>
 
 <p align="center">
     <a href="https://github.com/MaurycyLiebner/enve" target="_blank">
