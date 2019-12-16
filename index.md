@@ -1,10 +1,3 @@
-<p align="center">
-  <img align="center" height="128" src="https://avatars1.githubusercontent.com/u/16670651?s=128&v=4">
-</p>
-
-<h1 align="center">enve</h1>
-
-Enve is a new open-source 2D animation software for Linux.
 You can use enve to create vector animations, raster animations, and even use sound and video files.
 Enve was created with flexibility and expandability in mind.
 <br/>
