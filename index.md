@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+<p align="center">
+  <img align="center" height="128" src="https://avatars1.githubusercontent.com/u/16670651?s=128&v=4">
+</p>
 
-You can use the [editor on GitHub](https://github.com/MaurycyLiebner/MaurycyLiebner.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+<h1 align="center">enve</h1>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Enve is a new open-source 2D animation software for Linux.
+You can use enve to create vector animations, raster animations, and even use sound and video files.
+Enve was created with flexibility and expandability in mind.
+<br/>
+<h1 align="center">Support and spread the news!</h1>
 
-### Markdown
+<p align="center">
+    <a href="https://github.com/MaurycyLiebner/enve" target="_blank">
+    <img src="https://image.flaticon.com/icons/png/512/25/25231.png" alt="enve on GitHub" height="64" border="10" hspace="20"/>
+  </a>
+  
+  <a href="https://twitter.com/enve27539724" target="_blank">
+    <img src="https://image.flaticon.com/icons/png/512/187/187187.png" alt="enve on Twitter" height="64" border="10" hspace="20"/>
+  </a>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+  <a href="https://www.youtube.com/channel/UCjvNO3xdIQs-cpgwSf0mX5Q" target="_blank">
+    <img src="https://image.flaticon.com/icons/png/512/187/187209.png" alt="enve on YouTube" height="64" border="10" hspace="20"/>
+  </a>
 
-```markdown
-Syntax highlighted code block
+  <a href="https://www.patreon.com/enve" target="_blank">
+    <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" alt="enve on Patreon" height="64" border="10" hspace="20"/>
+  </a>
+</p><br/>
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MaurycyLiebner/MaurycyLiebner.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+![screenshot_1](https://user-images.githubusercontent.com/16670651/70745938-36e20900-1d25-11ea-9bdf-78d3fe402291.png)
