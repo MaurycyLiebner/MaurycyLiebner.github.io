@@ -9,7 +9,7 @@ Enve was created with flexibility and expandability in mind.
     <img src="https://image.flaticon.com/icons/png/512/25/25231.png" alt="enve on GitHub" height="64" border="10" hspace="20"/>
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://twitter.com/enve27539724" target="_blank">
+  <a href="https://twitter.com/enve2d" target="_blank">
     <img src="https://image.flaticon.com/icons/png/512/187/187187.png" alt="enve on Twitter" height="64" border="10" hspace="20"/>
   </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
