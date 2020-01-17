@@ -17,7 +17,7 @@ Enve was created with flexibility and expandability in mind.
     <img src="https://image.flaticon.com/icons/png/512/187/187209.png" alt="enve on YouTube" height="64" border="10" hspace="20"/>
   </a>
 </p>
-<br/>
+
 <p align="center">
   <a href="https://www.patreon.com/enve" target="_blank">
     <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" alt="enve on Patreon" height="64" border="10" hspace="20"/>
