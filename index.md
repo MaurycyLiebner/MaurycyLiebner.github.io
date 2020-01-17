@@ -16,13 +16,19 @@ Enve was created with flexibility and expandability in mind.
   <a href="https://www.youtube.com/channel/UCjvNO3xdIQs-cpgwSf0mX5Q" target="_blank">
     <img src="https://image.flaticon.com/icons/png/512/187/187209.png" alt="enve on YouTube" height="64" border="10" hspace="20"/>
   </a>
-&nbsp;&nbsp;&nbsp;
+</p>
+<br/>
+<p align="center">
   <a href="https://www.patreon.com/enve" target="_blank">
     <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" alt="enve on Patreon" height="64" border="10" hspace="20"/>
   </a>
 &nbsp;&nbsp;&nbsp;
   <a href="https://liberapay.com/enve" target="_blank">
     <img src="https://liberapay.com/assets/liberapay/icon-v2_white-on-yellow.svg?etag=.Z1LYSBJ8Z6GWUeLUUEf2XA~~" alt="enve on Liberapay" height="64" border="10" hspace="20"/>
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://paypal.me/enve2d" target="_blank">
+    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="enve on PayPal" height="64" border="10" hspace="20"/>
   </a>
 </p><br/>
 
