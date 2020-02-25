@@ -46,8 +46,8 @@ All the properties are animatable, meaning their values can change with time.
 
 <h4>Property Attributes</h4>
 
-* **name** - name of that will be used to reference the property, cannot contain spaces or special characters, e.g., **`exampleProperty`**
-* **nameUI** - name of the property that will be visible in enve interface, e.g., **`example property`**
+* **name** - name that will be used to reference the property, cannot contain spaces or special characters, e.g., **`exampleProperty`**
+* **nameUI** - name that will be visible in enve interface, e.g., **`example property`**
 * **xnameUI** - name of the x component of **vec2**
 * **ynameUI** - name of the y component of **vec2**
 * **type** - type of the property, e.g., **`int`**, **`float`**, **`vec2`**
@@ -58,7 +58,7 @@ All the properties are animatable, meaning their values can change with time.
 * **glValue** - specifies whether the property is used in the fragment shader, e.g., **`true`**, **`false`**
 * **resolutionScaled** - specifies whether the property value should be multiplied by scene resolution, e.g., **`true`**, **`false`**
 
-As you might have guessed, the **`[x, y]`** attribute values are only supported by **vec2** type, but they are not mandatory, **vec2** also accepts **`x`**, that will automatically be expanded to **`[x, x]`**.
+As you might have guessed, the **`[x, y]`** attribute values are only supported by **vec2** type, **vec2** also accepts **`x`**, that will automatically be expanded to **`[x, x]`**.
 
 <h4>Default Attribute Values</h4>
 
@@ -106,6 +106,8 @@ A good example is converting angle values from degrees to radians.
     </Value>
 </ShaderEffect>
 ```
+In the example above, only the value in degrees will be visible to the user, and only the value in radians will be passed to the fragment shader.
+<br/>
 You can also define scripts by enclosing them inside **`<Value></Value>`**, instead of using the **value** attribute.
 <br/>
 <h4>Attributes</h4>
@@ -132,7 +134,7 @@ Please note that the order in which values are defined matters. Values should be
 <h3>Margin</h3>
 
 Some effects might need to expand the texture size, e.g., blur effects require additional space depending on the radius.
-Enve will expand the texture for you, all you have to do is to define the Margin.
+Enve will expand the texture for you, all you have to do is define the Margin.
 
 ![exampleMargin](https://user-images.githubusercontent.com/16670651/75272974-34a92a00-57ff-11ea-8344-b9a5e8ab4868.png#center)
 
@@ -144,7 +146,7 @@ Enve will expand the texture for you, all you have to do is to define the Margin
     <Margin value="blurRadius"/>
 </ShaderEffect>
 ```
-The Margin has only one attribute - its **value**.<br/>
+The Margin only has the **value** attribute.<br/>
 The Margin can be defined with four values **`[left, top, right, bottom]`**,
 <br/>
 with two values **`[horizontal, vertical]`**, which translates to **`[horizontal, vertical, horizontal, vertical]`**,
