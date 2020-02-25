@@ -2,16 +2,16 @@
 
 Shader effects let users create their own raster effects. You need two files to get started with shader effects.
 
-* The <a href="https://www.w3schools.com/xml/xml_whatis.asp">XML</a> **\*.gre</b>** file defines the properties for the effect.
+* The <a href="https://www.w3schools.com/xml/xml_whatis.asp">XML</a> **\*.gre** file defines the properties for the effect.
 * The <a href="https://www.khronos.org/opengl/wiki/Fragment_Shader">GLSL fragment shader</a> **\*.frag** file defines the effect for a given set of property values.
 
 To use shader effects, both **\*.gre** and **\*.frag** files have to be placed in **`home_directory/.enve/ShaderEffects`** directory.
-</br>
+<br/>
 The **\*.gre** and **\*.frag** files have to share a name, e.g., **`exampleEffect.gre`** and **`exampleEffect.frag`**.
 <br/>
 
 <p align="center"><a href="https://github.com/MaurycyLiebner/enve/tree/master/examples/shaderEffects">Here you can find modest examples</a></p>
-</br>
+<br/>
 <h2 align="center">Define Properties (*.gre file)</h2>
 
 <h3>Root Element</h3>
@@ -22,7 +22,7 @@ The **\*.gre** and **\*.frag** files have to share a name, e.g., **`exampleEffec
 </ShaderEffect>
 ```
 
-A **ShaderEffect** <a href="https://en.wikipedia.org/wiki/Root_element">root element</a> has only a **name** attribute. The **name** will be visible in enve interface.</br>
+A **ShaderEffect** <a href="https://en.wikipedia.org/wiki/Root_element">root element</a> has only a **name** attribute. The **name** will be visible in enve interface.<br/>
 The **ShaderEffect** encloses all properties and values for the effect.
 
 <h3>Properties</h3>
@@ -114,7 +114,7 @@ You can also define scripts by enclosing them inside **`<Value></Value>`**, inst
 * **type** - type of the value, e.g., **`int`**, **`float`**, **`vec2`**
 * **value** - specifies the value, e.g., **`0`**, **`exampleProperty*5`**, **`[exampleVec2Property[0]*5, exampleVec2Value[1]*5]`**
 * **glValue** - specifies whether the value is used in the fragment shader, e.g., **`true`**, **`false`**(default)
-</br>
+<br/>
 
 ```xml
 <ShaderEffect name="Rotate">
@@ -144,14 +144,14 @@ Enve will expand the texture for you, all you have to do is to define the Margin
     <Margin value="blurRadius"/>
 </ShaderEffect>
 ```
-The Margin has only one attribute - its **value**.</br>
+The Margin has only one attribute - its **value**.<br/>
 The Margin can be defined with four values **`[left, top, right, bottom]`**,
-</br>
+<br/>
 with two values **`[horizontal, vertical]`**, which translates to **`[horizontal, vertical, horizontal, vertical]`**,
-</br>
+<br/>
 or with a single value **`margin`**, which translates to **`[margin, margin, margin, margin]`**.
-</br>
-</br>
+<br/>
+<br/>
 <h2 align="center">Fragment Shader (*.frag file)</h2>
 
 <h3>multiplyRed.gre file:</h3>
@@ -197,4 +197,3 @@ void main(void) {
 If you are familiar with fragment shaders, the example above should be easy to understand.
 <br/>
 Enve provides a texture **`uniform sampler2D texture;`** and values for all Properties and Values with **`glValue="true"`** **`uniform float exampleFlotPropVal;`**, **`uniform int exampleIntPropVal;`**, **`uniform vec2 exampleVec2PropVal;`**, all you have to do is to calculate the result.
-
