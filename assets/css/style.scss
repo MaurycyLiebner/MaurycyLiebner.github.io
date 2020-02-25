@@ -1,0 +1,13 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+a.button span {
+ padding-left:25px;
+ padding-right:25px;
+}
+a.button {
+ line-height: auto;
+ width: auto;
+}
