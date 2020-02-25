@@ -25,8 +25,8 @@
           </center>
         </header>
         <section id="downloads" class="clearfix">
-	  <a href="https://maurycyliebner.github.io/index" class="button"><span>Home</span></a>
-	  <a href="https://maurycyliebner.github.io/docs/index" class="button"><span>Documentation</span></a>
+	  <a href="https://maurycyliebner.github.io/index" class="button homeButton"><span>Home</span></a>
+	  <a href="https://maurycyliebner.github.io/docs/index" class="button docsButton"><span>Documentation</span></a>
           {% if site.show_downloads %}
           <a href="{{ site.github.zip_url }}" id="download-zip" class="button"><span>Download .zip</span></a>
           <a href="{{ site.github.tar_url }}" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
@@ -64,5 +64,16 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+<script>
+(function() {
+    var url = window.location.href;
+    var last = url.split('/');
+    var clas;
+    if(last.length < 5) clas = "homeButton"
+    else clas = last[last.length - 2] + "Button;
+    var button = document.getElementsByClassName(clas)[0];
+    button.classList.add("activeButton");
+})();
+</script>
   </body>
 </html>
