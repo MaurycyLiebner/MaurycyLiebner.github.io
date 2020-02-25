@@ -69,8 +69,8 @@
     var url = window.location.href;
     var last = url.split('/');
     var clas;
-    if(last.length < 5) clas = "homeButton"
-    else clas = last[last.length - 2] + "Button;
+    if(last.length < 5) clas = "homeButton";
+    else clas = last[last.length - 2] + "Button";
     var button = document.getElementsByClassName(clas)[0];
     button.classList.add("activeButton");
 })();
