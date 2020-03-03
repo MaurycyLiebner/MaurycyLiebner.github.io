@@ -115,9 +115,11 @@ As you might have guessed, the **`[x, y]`** attribute values are only supported 
     <!-- Margin (optional) -->
 </ShaderEffect>
 ```
-**Script** is divided into two portions:
+**Script** is divided into two portions, both of which should be written in JavaScript:
 * **Definitions** - here you can define functions, it is run only once, it cannot access property values
 * **Calculate** - it is run every time the effect is being called, lets you **extern** variable to use them in **glValue** and **Margin** scripts. You can use functions defined in **Definitions**. You can access **Property** values.
+
+Values for **vec2** properties are passed as arrays `[x, y]`.
 
 Enve provides **_eRect**, an additional variable you can access directly from **Calculate**, and **glValue** and **Margin** scripts. **_eRect** coresponds to the bounding rectangle `[x, y, width, height]` for the object the effect is beign applied to. Please note, that the **_eRect** corresponds to the bounding rectangle prior to applying the **Margin**. To see how to use **_eRect**, you can checkout the example <a href="https://github.com/MaurycyLiebner/enve/blob/master/examples/shaderEffects/eExplode.gre"><b>eExplode</b></a> effect and <a href="https://github.com/MaurycyLiebner/enve/blob/master/examples/shaderEffects/eDots.gre"><b>eDtos</b></a>.
 
