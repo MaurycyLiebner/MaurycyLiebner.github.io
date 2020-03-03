@@ -2,8 +2,8 @@
 
 Shader effects let users create their own raster effects. You need two files to get started with shader effects.
 
-* The <a href="https://www.w3schools.com/xml/xml_whatis.asp">XML</a> **\*.gre** file defines properties, a script and glValues for the effect.
-* The <a href="https://www.khronos.org/opengl/wiki/Fragment_Shader">GLSL fragment shader</a> **\*.frag** file defines the effect for a given set of property values.
+* The <a href="https://www.w3schools.com/xml/xml_whatis.asp">XML</a> **\*.gre** file defines properties visible in the interface, and values passed to the fragment shader.
+* The <a href="https://www.khronos.org/opengl/wiki/Fragment_Shader">GLSL fragment shader</a> **\*.frag** file defines the effect for a given set of values defined in **\*.gre** file.
 
 To use shader effects, both **\*.gre** and **\*.frag** files have to be placed in **`home_directory/.enve/ShaderEffects`** directory.
 <br/>
@@ -12,20 +12,21 @@ The **\*.gre** and **\*.frag** files have to share a name, e.g., **`exampleEffec
 
 <p align="center"><a href="https://github.com/MaurycyLiebner/enve/tree/master/examples/shaderEffects">Here you can find modest examples</a></p>
 <br/>
-<h2 align="center">Define Properties (*.gre file)</h2>
+<h2 align="center">Definitions (*.gre file)</h2>
 
 <h3>Root Element</h3>
 
 ```xml
 <ShaderEffect name="Example Effect">
-  <!-- Properties -->
+  <!-- Properties (optional) -->
   <!-- Script (optional) -->
   <!-- glValues (optional) -->
+  <!-- Margin (optional) -->
 </ShaderEffect>
 ```
 
 A **ShaderEffect** <a href="https://en.wikipedia.org/wiki/Root_element">root element</a> has only a **name** attribute. The **name** will be visible in enve interface.<br/>
-The **ShaderEffect** encloses all properties, an optional script and glValues for the effect.
+The **ShaderEffect** encloses **Properties**, a **Script**, **glValues**, and a **Margin** for the effect.
 
 <h3>Properties</h3>
 
@@ -43,10 +44,11 @@ All properties have to be defined inside **Properties** element, and use the **P
         <Property name="exampleProperty" nameUI="example property"
                   type="float" min="0" max="100" ini="8" step="1"
                   glValue="true" resolutionScaled="true"/>
-        <!-- More Properties -->
+        <!-- More Properties (optional) -->
     </Properties>
     <!-- Script (optional) -->
     <!-- glValues (optional) -->
+    <!-- Margin (optional) -->
 </ShaderEffect>
 ```
 
@@ -90,16 +92,34 @@ As you might have guessed, the **`[x, y]`** attribute values are only supported 
 <ShaderEffect name="Example Effect">
     <!-- Properties -->
     <Script>
-        <Definitions>
+        <!-- Obviously, it is just an example,
+             it would make more sense to
+             multiply the value directly from
+             the 'Calculate' portion of the script,
+             without the function definition -->
+        <Definitions> <!-- Optional -->
             <!-- JavaScript functions for use in Calculate -->
+            function exampleFunction(x) {
+                return 2*x;
+            }
         </Definitions>
+      
+        <!-- Variables defined with 'extern' can be accessed
+             from glValue and Margin 'value' scripts. -->
         <Calculate>
-            <!-- Define variables you will later pass to the fragment shader using glValues -->
+            var exampleLocalVariable = Math.PI * exampleProperty;
+            extern exampleExternVariable = exampleFunction(exampleLocalVariable);
         </Calculate>
     </Script>
     <!-- glValues -->
+    <!-- Margin (optional) -->
 </ShaderEffect>
 ```
+**Script** is divided into two portions:
+* **Definitions** - here you can define functions, it is run only once, it cannot access property values
+* **Calculate** - it is run every time the effect is being called, lets you **extern** variable to use them in **glValue** and **Margin** scripts. You can use functions defined in **Definitions**. You can access **Property** values.
+
+Enve provides **_eRect**, an additional variable you can access directly from **Calculate**, and **glValue** and **Margin** scripts. **_eRect** coresponds to the bounding rectangle `[x, y, width, height]` for the object the effect is beign applied to. Please note, that the **_eRect** corresponds to the bounding rectangle prior to applying the **Margin**. To see how to use **_eRect**, you can checkout the example <a href="https://github.com/MaurycyLiebner/enve/blob/master/examples/shaderEffects/eExplode.gre"><b>eExplode</b></a> effect and <a href="https://github.com/MaurycyLiebner/enve/blob/master/examples/shaderEffects/eDots.gre"><b>eDtos</b></a>.
 
 <h3>glValues (optional)</h3>
 
@@ -113,24 +133,17 @@ As you might have guessed, the **`[x, y]`** attribute values are only supported 
     </Properties>
     <Script>
         <Definitions>
-```
-```js
             function exampleFunction(x) {
                 return 2*x;
             }
-```
-```xml
         </Definitions>
         <Calculate>
-```
-```js
-            var exampleVariable = exampleFunction(Math.PI * exampleProperty);
-```
-```xml
+            var exampleLocalVariable = Math.PI * exampleProperty;
+            extern exampleExternVariable = exampleFunction(exampleLocalVariable);
         </Calculate>
     </Script>
     <glValues>
-        <glValue name="exampleValue" type="float" value="exampleVariable"/>
+        <glValue name="exampleValue" type="float" value="exampleExternVariable"/>
     </glValues>
 </ShaderEffect>
 ```
@@ -151,14 +164,13 @@ void main(void) {
 }
 ```
 
-**glValues** have no representation in the user interface. Instead, they let you pass variables you defined in the **Calculate** portion of the **Script** to the fragment shader.
-
+**glValues** have no representation in the user interface. Instead, they let you pass variables you defined as **extern**, in the **Calculate** portion of the **Script**, to the fragment shader.
 
 <br/>
 <h4>Attributes</h4>
 
-* **name** - name of that will be used to reference the value, cannot contain spaces or special characters, e.g., **`exampleValue`**
-* **type** - type of the value, e.g., **`int`**, **`float`**, **`vec2`**
+* **name** - name that will be used to reference the value from the fragment shader, cannot contain spaces or special characters, e.g., **`exampleValue`**
+* **type** - type of the value, e.g., **`float`**, **`vec2`**, **`vec3`**, **`vec4`**, **`int`**, **`ivec2`**, **`ivec3`**, **`ivec4`**
 * **value** - specifies the value, e.g., **`0`**, **`exampleProperty*5`**, **`[exampleVec2Property[0]*5, exampleVec2Value[1]*5]`**(**vec2** only)
 <br/>
 
@@ -180,12 +192,13 @@ Enve will expand the texture for you, all you have to do is define the Margin.
 </ShaderEffect>
 ```
 The **Margin** only has the **value** attribute.<br/>
-All variables defined in the **Calculate** portion of the **Script** are available to the **Margin** along with all the **Property** values.
+All variables defined as 'extern' in the **Calculate** portion of the **Script** are available to the **Margin** along with all the **Property** values.
 The **Margin** can be defined with four values **`[left, top, right, bottom]`**,
 <br/>
 with two values **`[horizontal, vertical]`**, which translates to **`[horizontal, vertical, horizontal, vertical]`**,
 <br/>
-or with a single value **`margin`**, which translates to **`[margin, margin, margin, margin]`**.
+or with a single value **`margin`**, which translates to **`[margin, margin, margin, margin]`**.<br/>
+To see how to use **Margin**, you can checkout the example <a href="https://github.com/MaurycyLiebner/enve/blob/master/examples/shaderEffects/eExplode.gre"><b>eExplode</b></a> effect.
 <br/>
 <br/>
 <h2 align="center">Fragment Shader (*.frag file)</h2>
