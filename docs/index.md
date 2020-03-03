@@ -121,7 +121,7 @@ As you might have guessed, the **`[x, y]`** attribute values are only supported 
 
 Values for **vec2** properties are passed as arrays `[x, y]`.
 
-Enve provides **_eRect**, an additional variable you can access directly from **Calculate**, and **glValue** and **Margin** scripts. **_eRect** coresponds to the bounding rectangle `[x, y, width, height]` for the object the effect is beign applied to. Please note, that the **_eRect** corresponds to the bounding rectangle prior to applying the **Margin**. To see how to use **_eRect**, you can checkout the example <a href="https://github.com/MaurycyLiebner/enve/blob/master/examples/shaderEffects/eExplode.gre"><b>eExplode</b></a> effect and <a href="https://github.com/MaurycyLiebner/enve/blob/master/examples/shaderEffects/eDots.gre"><b>eDtos</b></a>.
+Enve provides **_eRect**, an additional variable you can access directly from **Calculate**, and **glValue** and **Margin** scripts. **_eRect** coresponds to the bounding rectangle `[x, y, width, height]` for the object the effect is beign applied to. Please note, that the **_eRect** corresponds to the bounding rectangle prior to applying the **Margin**. To see how to use **_eRect**, you can checkout the example <a href="https://github.com/MaurycyLiebner/enve/blob/master/examples/shaderEffects/eExplode.gre"><b>eExplode</b></a> effect and <a href="https://github.com/MaurycyLiebner/enve/blob/master/examples/shaderEffects/eDots.gre"><b>eDots</b></a>.
 
 <h3>glValues (optional)</h3>
 
@@ -179,7 +179,7 @@ void main(void) {
 <h3>Margin</h3>
 
 Some effects might need to expand the texture size, e.g., blur effects require additional space depending on the radius.
-Enve will expand the texture for you, all you have to do is define the Margin.
+Enve will expand the texture for you, all you have to do is define the **Margin**.
 
 ![exampleMargin](https://user-images.githubusercontent.com/16670651/75272974-34a92a00-57ff-11ea-8344-b9a5e8ab4868.png#center)
 
