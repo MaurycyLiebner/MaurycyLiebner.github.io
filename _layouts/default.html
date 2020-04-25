@@ -30,8 +30,8 @@
 			<a href="https://maurycyliebner.github.io/dow/index" class="button dowButton"><span>Download</span></a>
         </section>
         <section id="docsLinks">
-			<a href="https://maurycyliebner.github.io/docs/shaderEffects">Shader Effects</a>
-			<a href="https://maurycyliebner.github.io/docs/xevSpecification">Xev Specification</a>
+			<a href="https://maurycyliebner.github.io/docs/shaderEffects"><span>Shader Effects</span></a>
+			<a href="https://maurycyliebner.github.io/docs/xevSpecification"><span>Xev Specification</span></a>
         </section>
         <hr>
         <section id="main_content">
@@ -62,12 +62,12 @@
 	var folder = "";
     if(last.length < 5) clas = "homeButton";
     else {
-		folder = last[last.length - 2];
-		clas = folder + "Button";
-	}
-	var docsLinks = document.getElementById("docsLinks");
-	if(folder == "docs") x.style.display = "block";
-	else x.style.display = "none";
+        folder = last[last.length - 2];
+        clas = folder + "Button";
+    }
+    var docsLinks = document.getElementById("docsLinks");
+    if(folder == "docs") docsLinks.style.display = "block";
+    else docsLinks.style.display = "none";
     var button = document.getElementsByClassName(clas)[0];
     button.classList.add("activeButton");
 })();
