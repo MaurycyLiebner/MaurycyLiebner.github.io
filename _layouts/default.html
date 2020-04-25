@@ -30,8 +30,8 @@
 			<a href="https://maurycyliebner.github.io/dow/index" class="button dowButton"><span>Download</span></a>
         </section>
         <section id="docsLinks">
-			<a href="https://maurycyliebner.github.io/docs/shaderEffects"><span>Shader Effects</span></a>
-			<a href="https://maurycyliebner.github.io/docs/xevSpecification"><span>Xev Specification</span></a>
+			<a href="https://maurycyliebner.github.io/docs/shaderEffects" class="link"><span>Shader Effects</span></a>
+			<a href="https://maurycyliebner.github.io/docs/xevSpecification" class="link"><span>Xev Specification</span></a>
         </section>
         <hr>
         <section id="main_content">
@@ -59,7 +59,7 @@
     var url = window.location.href;
     var last = url.split('/');
     var clas;
-	var folder = "";
+    var folder = "";
     if(last.length < 5) clas = "homeButton";
     else {
         folder = last[last.length - 2];
