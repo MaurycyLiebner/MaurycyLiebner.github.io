@@ -1,6 +1,6 @@
 <h1 align="center">Xev File Format Specification</h1>
 
-Xev is a XML-based format similar to ora and kra.<\br>
+Xev is a XML-based format similar to ora and kra.<br/>
 It is meant to be a more open replacement for enve binary ev format.
 
 ## File Layout Specification
@@ -79,9 +79,9 @@ A xev file must have a thumbnail.png in order to allow file browser software to 
 #### scenes/X/
 
 **X** - scene id, based on the order of appearence in <a href="#document.xml">document.xml</a>.
-<\br>
+<br/>
 All properties and objects contained in the scene are specified in this folder.
-<\br>
+<br/>
 The content of this folder is similar to a <a href="#groupObject">Group Object</a> folder.
 The only difference is that scene folder contains **gradients.xml**.
 
@@ -112,7 +112,7 @@ This file declares all gradients used by scene's child objects.
 #### scenes/X/objects/Y/
 
 **Y** - object id, based on the order of appearence in <a href="#stack.xml">stack.xml</a>.
-<\br>
+<br/>
 
 ##### stack.xml
 
