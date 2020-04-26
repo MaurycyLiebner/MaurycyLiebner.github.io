@@ -114,12 +114,85 @@ This file declares all gradients used by scene's child objects.
 **Y** - object id, based on the order of appearence in <a href="#stack.xml">stack.xml</a>.
 <br/>
 
+<h4><a name="object">Object</a></h4>
+
+##### properties.xml
+
+```xml
+<Object id="1" open="0 1">
+    <CustomProperties/>
+    <BlendEffects/>
+    <Transform open="0">
+        <Translation>
+            <X value="711.5446680890581"/>
+            <Y value="375.5977814084237"/>
+        </Translation>
+        <Scale>
+            <X value="3.680336265192215"/>
+            <Y value="3.680336265192215"/>
+        </Scale>
+        <Rotation value="0"/>
+        <Pivot>
+            <X value="253.9383754730225"/>
+            <Y value="156.3928337097168"/>
+        </Pivot>
+        <Shear>
+            <X value="0"/>
+            <Y value="0"/>
+        </Shear>
+        <Opacity value="100"/>
+    </Transform>
+    <RasterEffects/>
+    <PathEffects/> <!-- base path effects -->
+    <PathEffects/> <!-- fill path effects -->
+    <PathEffects/> <!-- outline base path effects -->
+    <PathEffects/> <!-- outline path effects -->
+</Object>
+```
+Each object has its own xev-file-wide unique **id**.
+<br/>
+Ids of the timeline widgets in which property content is shown is saved in **open** attribute.
+<br/>
+
+<h4><a name="groupObject">Group Object</a></h4>
+
+Extends <a href="#object">Objects</a>.
+<br/>
+The difference between group objects and regular objects is that group objects contain other objects.
+<br/>
+The group object's children stack is defined by **stack.xml**, and all child object data resides in **objects/** folder.
+
 ##### stack.xml
 
-Present only for <a href="#groupObject">Group Object</a>, along with **objects/** folder declares group children.
+Declares children order, names and types.
+
+```xml
+<Stack>
+    <Object name="Object 1" type="5"/>  <!-- id: 0 -->
+    <Object name="Path 3" type="0"/>  <!-- id: 1 -->
+    <!-- more objects -->
+</Stack>
+```
+
+**type** - object type
+* 0 - path object
+* 1 - ellipse
+* 2 - image object
+* 3 - rectangle
+* 4 - text object
+* 5 - layer object
+* 6 - scene (will not appear in stack.xml)
+* 7 - object link
+* 8 - group object link
+* 9 - scene link
+* 10 - SVG link object
+* 11 - video object
+* 12 - image sequence object
+* 13 - paint object
+* 14 - group object
+* 15 - custom object
+* 16 - sculpt path object
 
 ##### objects/
 
-Present only for <a href="#groupObject">Group Object</a>, contains child object folders, named according to object ids, which correspond to their order in **stack.xml**.
-
-<h4><a name="groupObject">Group Object</a></h4>
+Contains child object folders, named according to object ids, which correspond to their order in **stack.xml**.
