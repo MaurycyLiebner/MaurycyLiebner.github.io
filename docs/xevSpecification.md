@@ -104,7 +104,7 @@ This file declares all gradients used by scene's child objects.
             <V3 value="1"/>
             <A value="1"/>
         </Color>
-        <!-- more collors -->
+        <!-- more colors -->
     </Gradient>
     <!-- more gradients -->
 </Gradients>
@@ -122,4 +122,4 @@ Present only for <a href="#groupObject">Group Object</a>, along with **objects/*
 
 Present only for <a href="#groupObject">Group Object</a>, contains child object folders, named according to object ids, which correspond to their order in **stack.xml**.
 
-<h4><a name="document.xml">Group Object</a></h4>
+<h4><a name="groupObject">Group Object</a></h4>
