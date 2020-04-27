@@ -181,11 +181,11 @@ There are many types of objects. The type is defined in parent's <a href="#stack
 
 **type**
 * **0** - <a href="#Path Object">Path Object</a>
-* **1** - <a href="#Ellipse Object">ellipse Object</a>
-* **2** - <a href="#srcObjects">image Object</a>
-* **3** - <a href="#Rectangle Object">rectangle Object</a>
-* **4** - <a href="#Text Object">text Object</a>
-* **5** - <a href="#Group Object">layer Object</a>
+* **1** - <a href="#Ellipse Object">Ellipse Object</a>
+* **2** - <a href="#srcObjects">Image Object</a>
+* **3** - <a href="#Rectangle Object">Rectangle Object</a>
+* **4** - <a href="#Text Object">Text Object</a>
+* **5** - <a href="#Group Object">Layer Object</a>
 * **6** - Scene Object (will not appear in stack.xml)
 * **7** - <a href="#linkObjects">Object link Object</a>
 * **8** - <a href="#linkObjects">Group link Object</a>
