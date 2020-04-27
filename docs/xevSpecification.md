@@ -68,22 +68,22 @@ A xev file must have a thumbnail.png in order to allow file browser software to 
     
     <!-- scenes declaration -->
     <Scenes>
-        <!-- scene with id 0 -->
+        <!-- scene with stack index 0 -->
         <Scene name="Example" width="1920" height="1080" fps="24"
                frame="101" clip="true" resolution="1"/>
-        <!-- more scenes, with consecutive ids -->
+        <!-- more scenes, with consecutive stack indexes -->
     </Scenes>
 </Document>
 ```
 
 #### scenes/X/
 
-**X** - scene id, based on the order of appearence in <a href="#document.xml">document.xml</a>.
+**X** - stack index, based on the order of appearence in <a href="#document.xml">document.xml</a>.
 <br/>
 All properties and objects contained in the scene are specified in this folder.
 <br/>
-The content of this folder is similar to a <a href="#groupObject">Group Object</a> folder.
-The only difference is that scene folder contains **gradients.xml**.
+The content of this folder is similar to a <a href="#Group Object">Group Object's</a> <a href="#scenes/X/objects/Y/">scenes/X/objects/Y/</a> folder.
+The only difference is that a scene folder contains **gradients.xml**.
 
 ##### scenes/X/gradients.xml
 
@@ -109,15 +109,37 @@ This file declares all gradients used by scene's child objects.
     <!-- more gradients -->
 </Gradients>
 ```
-#### scenes/X/objects/Y/
 
-**Y** - object id, based on the order of appearence in <a href="#stack.xml">stack.xml</a>.
+<h4><a name="scenes/X/objects/Y/">scenes/X/objects/Y/</a></h4>
+
+**Y** - object stack index, based on the order of appearence in <a href="#stack.xml">stack.xml</a>.
 <br/>
 
-<h4><a name="object">Object</a></h4>
+<h4><a name="properties.xml">scenes/X/objects/Y/properties.xml</a></h4>
 
-##### properties.xml
+Defines <a href="#Object">object's</a> properties.
 
+<h4><a name="stack.xml">stack.xml</a></h4>
+
+Declares children order, names and types.
+
+```xml
+<Stack>
+    <Object name="Object 1" type="5"/>  <!-- stack index: 0 -->
+    <Object name="Path 3" type="0"/>  <!-- stack index: 1 -->
+    <!-- more objects -->
+</Stack>
+```
+
+##### objects/
+
+Contains child object folders, named according to object stack indexes, which correspond to their order in **stack.xml**.
+
+## Syntax
+
+<h3><a name="Object">Object</a></h3>
+
+<a href="#properties.xml">properties.xml</a>
 ```xml
 <Object id="1" open="0 1">
     <CustomProperties/>
@@ -149,50 +171,71 @@ This file declares all gradients used by scene's child objects.
     <PathEffects/> <!-- outline path effects -->
 </Object>
 ```
+
 Each object has its own xev-file-wide unique **id**.
 <br/>
 Ids of the timeline widgets in which property content is shown is saved in **open** attribute.
 <br/>
 
-<h4><a name="groupObject">Group Object</a></h4>
+There are many types of objects. The type is defined in parent's <a href="#stack.xml">stack.xml</a>
 
-Extends <a href="#object">Objects</a>.
-<br/>
-The difference between group objects and regular objects is that group objects contain other objects.
-<br/>
-The group object's children stack is defined by **stack.xml**, and all child object data resides in **objects/** folder.
+**type**
+* **0** - <a href="#Path Object">Path Object</a>
+* **1** - <a href="#Ellipse Object">ellipse Object</a>
+* **2** - <a href="#srcObjects">image Object</a>
+* **3** - <a href="#Rectangle Object">rectangle Object</a>
+* **4** - <a href="#Text Object">text Object</a>
+* **5** - <a href="#Group Object">layer Object</a>
+* **6** - Scene Object (will not appear in stack.xml)
+* **7** - <a href="#linkObjects">Object link Object</a>
+* **8** - <a href="#linkObjects">Group link Object</a>
+* **9** - <a href="#linkObjects">Scene link Object</a>
+* **10** - <a href="#srcObjects">SVG link Object</a>
+* **11** - <a href="#srcObjects">Video Object</a>
+* **12** - <a href="#srcObjects">Image Sequence Object</a>
+* **13** - <a href="#Paint Object">Paint Object</a>
+* **14** - <a href="#Group Object">Group Object</a>
+* **15** - Custom Object
+* **16** - <a href="#Sculpt Path Object">Sculpt Path Object</a>
 
-##### stack.xml
+<h4><a name="Path Object">Path Object</a></h4>
 
-Declares children order, names and types.
+<h4><a name="Ellipse Object">Ellipse Object</a></h4>
 
-```xml
-<Stack>
-    <Object name="Object 1" type="5"/>  <!-- id: 0 -->
-    <Object name="Path 3" type="0"/>  <!-- id: 1 -->
-    <!-- more objects -->
-</Stack>
-```
+<h4><a name="Rectangle Object">Rectangle Object</a></h4>
 
-**type** - object type
-* 0 - path object
-* 1 - ellipse
-* 2 - image object
-* 3 - rectangle
-* 4 - text object
-* 5 - layer object
-* 6 - scene (will not appear in stack.xml)
-* 7 - object link
-* 8 - group object link
-* 9 - scene link
-* 10 - SVG link object
-* 11 - video object
-* 12 - image sequence object
-* 13 - paint object
-* 14 - group object
-* 15 - custom object
-* 16 - sculpt path object
+<h4><a name="Text Object">Text Object</a></h4>
 
-##### objects/
+<h4><a name="Group Object">Group/Layer Object</a></h4>
 
-Contains child object folders, named according to object ids, which correspond to their order in **stack.xml**.
+<h4><a name="srcObjects">Video/Image Sequence/SVG Link/Image Object</a></h4>
+
+<h4><a name="linkObjects">Object/Group/Scene Link Object</a></h4>
+
+<h4><a name="Paint Object">Paint Object</a></h4>
+
+<h4><a name="Sculpt Path Object">Sculpt Path Object</a></h4>
+
+
+
+<h3><a name="Properties">Properties</a></h3>
+
+<h4><a name="Transform">Transform</a></h4>
+
+<h4><a name="Color">Color</a></h4>
+
+<h4><a name="Gradient">Gradient</a></h4>
+
+<h4><a name="Path">Path</a></h4>
+
+<h4><a name="Sculpt Path">Sculpt Path</a></h4>
+
+<h4><a name="Static Group Property">Static Group Property</a></h4>
+
+<h4><a name="Dynamic Group Property">Dynamic Group Property</a></h4>
+
+<h4><a name="Paint Canvas">Paint Canvas</a></h4>
+
+<h4><a name="Text">Text</a></h4>
+
+
