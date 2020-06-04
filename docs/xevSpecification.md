@@ -212,7 +212,74 @@ There are many types of objects. The type is defined in parent's <a href="#stack
 
 <h4><a name="linkObjects">Object/Group/Scene Link Object</a></h4>
 
+<a href="#properties.xml">properties.xml</a>
+```xml
+<Object id="2">
+   <CustomProperties/>
+   <BlendEffects/>
+   <ObjectLink targetId="3"/>
+   <Transform>
+      <Translation>
+         <X value="1593.342857142857"/>
+         <Y value="564.6857142857143"/>
+      </Translation>
+      <Scale>
+         <X value="1"/>
+         <Y value="1"/>
+      </Scale>
+      <Rotation value="0"/>
+      <Pivot>
+         <X value="0"/>
+         <Y value="0"/>
+      </Pivot>
+      <Shear>
+         <X value="0"/>
+         <Y value="0"/>
+      </Shear>
+      <Opacity value="100"/>
+   </Transform>
+   <RasterEffects/>
+</Object>
+```
+**ObjectLink** **targetId** corresponds to target **Object**'s **id**.
+
 <h4><a name="Paint Object">Paint Object</a></h4>
+
+<a href="#properties.xml">properties.xml</a>
+```xml
+<Object id="1">
+   <CustomProperties/>  <!-- assets/0 -->
+   <BlendEffects/> <!-- assets/1 -->
+   <Transform> <!-- assets/2 -->
+      <Translation>
+         <X value="273.4285714285714"/>
+         <Y value="587.8285714285715"/>
+      </Translation>
+      <Scale>
+         <X value="1"/>
+         <Y value="1"/>
+      </Scale>
+      <Rotation value="0"/>
+      <Pivot>
+         <X value="0"/>
+         <Y value="0"/>
+      </Pivot>
+      <Shear>
+         <X value="0"/>
+         <Y value="0"/>
+      </Shear>
+      <Opacity value="100"/>
+   </Transform>
+   <RasterEffects/> <!-- assets/3 -->
+   <PaintSurface pivot="64 64"/> <!-- assets/4 -->
+</Object>
+```
+<h5>Image Assets</h5>
+
+Paint Object images are saved in PaintSurface (index 4) property assets folder `(...)/assets/4/`, e.g., `/scenes/0/objects/0/assets/4/`.
+
+There is only a single image for not animated PaintSurface - `value.png`.
+For animated PaintSurface, image names correspond to the frames they are on, e.g., `0.png` for a keyframe on frame 0.
 
 <h4><a name="Sculpt Path Object">Sculpt Path Object</a></h4>
 
