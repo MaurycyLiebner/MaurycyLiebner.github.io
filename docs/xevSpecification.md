@@ -93,16 +93,16 @@ This file declares all gradients used by scene's child objects.
 <Gradients>
     <Gradient id="0">
         <Color mode="0">
-            <V1 value="1"/>
-            <V2 value="0"/>
-            <V3 value="0"/>
-            <A value="1"/>
+            <Red value="1"/>
+            <Green value="0"/>
+            <Blue value="0"/>
+            <Alpha value="1"/>
         </Color>
         <Color mode="0">
-            <V1 value="1"/>
-            <V2 value="1"/>
-            <V3 value="1"/>
-            <A value="1"/>
+            <Red value="1"/>
+            <Green value="1"/>
+            <Blue value="1"/>
+            <Alpha value="1"/>
         </Color>
         <!-- more colors -->
     </Gradient>
@@ -141,34 +141,45 @@ Contains child object folders, named according to object stack indexes, which co
 
 <a href="#properties.xml">properties.xml</a>
 ```xml
-<Object id="1" open="0 1">
-    <CustomProperties/>
-    <BlendEffects/>
-    <Transform open="0">
-        <Translation>
-            <X value="711.5446680890581"/>
-            <Y value="375.5977814084237"/>
-        </Translation>
-        <Scale>
-            <X value="3.680336265192215"/>
-            <Y value="3.680336265192215"/>
-        </Scale>
-        <Rotation value="0"/>
-        <Pivot>
-            <X value="253.9383754730225"/>
-            <Y value="156.3928337097168"/>
-        </Pivot>
-        <Shear>
-            <X value="0"/>
-            <Y value="0"/>
-        </Shear>
-        <Opacity value="100"/>
-    </Transform>
-    <RasterEffects/>
-    <PathEffects/> <!-- base path effects -->
-    <PathEffects/> <!-- fill path effects -->
-    <PathEffects/> <!-- outline base path effects -->
-    <PathEffects/> <!-- outline path effects -->
+<Object id="0">
+   <Transform>
+      <Translation>
+         <X value="0"/>
+         <Y value="0"/>
+      </Translation>
+      <Rotation value="0"/>
+      <Scale>
+         <X value="1"/>
+         <Y value="1"/>
+      </Scale>
+      <Shear>
+         <X value="0"/>
+         <Y value="0"/>
+      </Shear>
+      <Pivot>
+         <X value="0"/>
+         <Y value="0"/>
+      </Pivot>
+      <Opacity value="100"/>
+   </Transform>
+   <Properties>
+      <!-- properties -->
+   </Properties>
+   <BlendEffects>
+      <!-- blend effects -->
+   </BlendEffects>
+   
+   <RasterEffects>
+      <!-- raster effects -->
+   </RasterEffects>
+
+   <Color mode="0">
+      <Red value="1"/>
+      <Green value="1"/>
+      <Blue value="1"/>
+      <Alpha value="1"/>
+   </Color>
+   <!-- object type specific properties -->
 </Object>
 ```
 
@@ -206,7 +217,69 @@ There are many types of objects. The type is defined in parent's <a href="#stack
 
 <h4><a name="Text Object">Text Object</a></h4>
 
+<a href="#properties.xml">properties.xml</a>
+```xml
+<Object fontSlant="0" fontWeight="400" hAlign="1" fontSize="72" fontWidth="5" fontFamily="Arial" id="1" vAlign="32">
+   <!-- object properties -->
+   <Fill type="1">
+      <Color mode="0">
+         <Red value="0"/>
+         <Green value="0"/>
+         <Blue value="0"/>
+         <Alpha value="1"/>
+      </Color>
+   </Fill>
+   <Outline type="0" stroke-linejoin="round" stroke-linecap="round">
+      <Width value="1"/>
+   </Outline>
+   
+   <PathBaseEffects>
+      <!-- path effects -->
+   </PathBaseEffects>
+   <FillEffects>
+      <!-- path effects -->
+   </FillEffects>
+   <OutlineBaseEffects>
+      <!-- path effects -->
+   </OutlineBaseEffects>
+   <OutlineEffects>
+      <!-- path effects -->
+   </OutlineEffects>
+   
+   <Text value="example text"/>
+   <Spacing>
+      <Letters value="0"/>
+      <Words value="1"/>
+      <Lines value="1"/>
+   </Spacing>
+   <TextEffects/>
+</Object>
+```
+
 <h4><a name="Group Object">Group/Layer Object</a></h4>
+
+<a href="#properties.xml">properties.xml</a>
+```xml
+<Object id="1">
+   <!-- object properties -->
+   <PathBaseEffects>
+      <!-- path effects -->
+   </PathBaseEffects>
+   <FillEffects>
+      <!-- path effects -->
+   </FillEffects>
+   <OutlineBaseEffects>
+      <!-- path effects -->
+   </OutlineBaseEffects>
+   <OutlineEffects>
+      <!-- path effects -->
+   </OutlineEffects>
+   
+   <FlipBook checked="false">
+      <Index value="0"/>
+   </FlipBook>
+</Object>
+```
 
 <h4><a name="srcObjects">Video/Image Sequence/SVG Link/Image Object</a></h4>
 
@@ -215,30 +288,8 @@ There are many types of objects. The type is defined in parent's <a href="#stack
 <a href="#properties.xml">properties.xml</a>
 ```xml
 <Object id="2">
-   <CustomProperties/>
-   <BlendEffects/>
-   <ObjectLink targetId="3"/>
-   <Transform>
-      <Translation>
-         <X value="1593.342857142857"/>
-         <Y value="564.6857142857143"/>
-      </Translation>
-      <Scale>
-         <X value="1"/>
-         <Y value="1"/>
-      </Scale>
-      <Rotation value="0"/>
-      <Pivot>
-         <X value="0"/>
-         <Y value="0"/>
-      </Pivot>
-      <Shear>
-         <X value="0"/>
-         <Y value="0"/>
-      </Shear>
-      <Opacity value="100"/>
-   </Transform>
-   <RasterEffects/>
+   <!-- object properties -->
+   <LinkTarget targetId="3"/>
 </Object>
 ```
 **ObjectLink** **targetId** corresponds to target **Object**'s **id**.
@@ -248,35 +299,13 @@ There are many types of objects. The type is defined in parent's <a href="#stack
 <a href="#properties.xml">properties.xml</a>
 ```xml
 <Object id="1">
-   <CustomProperties/>  <!-- assets/0 -->
-   <BlendEffects/> <!-- assets/1 -->
-   <Transform> <!-- assets/2 -->
-      <Translation>
-         <X value="273.4285714285714"/>
-         <Y value="587.8285714285715"/>
-      </Translation>
-      <Scale>
-         <X value="1"/>
-         <Y value="1"/>
-      </Scale>
-      <Rotation value="0"/>
-      <Pivot>
-         <X value="0"/>
-         <Y value="0"/>
-      </Pivot>
-      <Shear>
-         <X value="0"/>
-         <Y value="0"/>
-      </Shear>
-      <Opacity value="100"/>
-   </Transform>
-   <RasterEffects/> <!-- assets/3 -->
-   <PaintSurface pivot="64 64"/> <!-- assets/4 -->
+   <!-- object properties -->
+   <Canvas pivot="64 64"/> <!-- assets/Canvas -->
 </Object>
 ```
 <h5>Image Assets</h5>
 
-Paint Object images are saved in PaintSurface (index 4) property assets folder `(...)/assets/4/`, e.g., `/scenes/0/objects/0/assets/4/`.
+Paint Object images are saved in Canvas property assets folder `(...)/assets/Canvas/`, e.g., `/scenes/0/objects/0/assets/Canvas/`.
 
 There is only a single image for not animated PaintSurface - `value.png`.
 For animated PaintSurface, image names correspond to the frames they are on, e.g., `0.png` for a keyframe on frame 0.
