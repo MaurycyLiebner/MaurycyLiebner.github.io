@@ -87,6 +87,7 @@ The only difference is that a scene folder contains **gradients.xml**.
 
 ##### scenes/X/gradients.xml
 
+
 This file declares all gradients used by scene's child objects.
 
 ```xml
@@ -108,6 +109,22 @@ This file declares all gradients used by scene's child objects.
     </Gradient>
     <!-- more gradients -->
 </Gradients>
+```
+##### scenes/X/properties.xml
+
+See <a href="#properties.xml">properties.xml</a>.
+Defines scene background color.
+
+```xml
+<Object id="0">
+   <!-- background color -->
+   <Color mode="0">
+      <Red value="1"/>
+      <Green value="1"/>
+      <Blue value="1"/>
+      <Alpha value="1"/>
+   </Color>
+</Object>
 ```
 
 <h4><a name="scenes/X/objects/Y/">scenes/X/objects/Y/</a></h4>
@@ -162,9 +179,11 @@ Contains child object folders, named according to object stack indexes, which co
       </Pivot>
       <Opacity value="100"/>
    </Transform>
+   
    <Properties>
       <!-- properties -->
    </Properties>
+   
    <BlendEffects>
       <!-- blend effects -->
    </BlendEffects>
@@ -172,13 +191,22 @@ Contains child object folders, named according to object stack indexes, which co
    <RasterEffects>
       <!-- raster effects -->
    </RasterEffects>
-
-   <Color mode="0">
-      <Red value="1"/>
-      <Green value="1"/>
-      <Blue value="1"/>
-      <Alpha value="1"/>
-   </Color>
+   
+   <!-- path effects are supported only by: -->
+   <!-- groups, layers, paths, ellipses, rectangles, text -->
+   <PathBaseEffects>
+      <!-- path effects -->
+   </PathBaseEffects>
+   <FillEffects>
+      <!-- path effects -->
+   </FillEffects>
+   <OutlineBaseEffects>
+      <!-- path effects -->
+   </OutlineBaseEffects>
+   <OutlineEffects>
+      <!-- path effects -->
+   </OutlineEffects>
+   
    <!-- object type specific properties -->
 </Object>
 ```
@@ -202,12 +230,11 @@ There are many types of objects. The type is defined in parent's <a href="#stack
 * **8** - <a href="#linkObjects">Group link Object</a>
 * **9** - <a href="#linkObjects">Scene link Object</a>
 * **10** - <a href="#srcObjects">SVG link Object</a>
-* **11** - <a href="#srcObjects">Video Object</a>
-* **12** - <a href="#srcObjects">Image Sequence Object</a>
+* **11** - <a href="#videoObjects">Video Object</a>
+* **12** - <a href="#imgSeqObjects">Image Sequence Object</a>
 * **13** - <a href="#Paint Object">Paint Object</a>
 * **14** - <a href="#Group Object">Group Object</a>
 * **15** - Custom Object
-* **16** - <a href="#Sculpt Path Object">Sculpt Path Object</a>
 
 <h4><a name="Path Object">Path Object</a></h4>
 
@@ -233,19 +260,6 @@ There are many types of objects. The type is defined in parent's <a href="#stack
       <Width value="1"/>
    </Outline>
    
-   <PathBaseEffects>
-      <!-- path effects -->
-   </PathBaseEffects>
-   <FillEffects>
-      <!-- path effects -->
-   </FillEffects>
-   <OutlineBaseEffects>
-      <!-- path effects -->
-   </OutlineBaseEffects>
-   <OutlineEffects>
-      <!-- path effects -->
-   </OutlineEffects>
-   
    <Text value="example text"/>
    <Spacing>
       <Letters value="0"/>
@@ -262,26 +276,43 @@ There are many types of objects. The type is defined in parent's <a href="#stack
 ```xml
 <Object id="1">
    <!-- object properties -->
-   <PathBaseEffects>
-      <!-- path effects -->
-   </PathBaseEffects>
-   <FillEffects>
-      <!-- path effects -->
-   </FillEffects>
-   <OutlineBaseEffects>
-      <!-- path effects -->
-   </OutlineBaseEffects>
-   <OutlineEffects>
-      <!-- path effects -->
-   </OutlineEffects>
-   
    <FlipBook checked="false">
       <Index value="0"/>
    </FlipBook>
 </Object>
 ```
 
-<h4><a name="srcObjects">Video/Image Sequence/SVG Link/Image Object</a></h4>
+<h4><a name="srcObjects">SVG Link/Image Object</a></h4>
+
+<a href="#properties.xml">properties.xml</a>
+```xml
+<Object id="1" srcAbs="/home/username/Documents/folder/(...)" srcRel="folder/(...)">
+   <!-- object properties -->
+</Object>
+```
+
+<h4><a name="imgSeqObjects">Image Sequence</a></h4>
+
+<a href="#properties.xml">properties.xml</a>
+```xml
+<Object id="1" srcAbs="/home/username/Documents/folder/(...)" srcRel="folder/(...)">
+   <!-- object properties -->
+   <Frame enabled="false" value="0"/> <!-- frame remapping -->
+</Object>
+```
+
+<h4><a name="videoObjects">Video Object</a></h4>
+
+<a href="#properties.xml">properties.xml</a>
+```xml
+<Object id="1" absSrc="/home/username/Documents/folder/(...)" relSrc="folder/(...)">
+   <!-- object properties -->
+   <Frame enabled="false" value="0"/> <!-- frame remapping -->
+   <Sound>
+      <Volume value="100"/>
+   </Sound>
+</Object>
+```
 
 <h4><a name="linkObjects">Object/Group/Scene Link Object</a></h4>
 
@@ -303,15 +334,14 @@ There are many types of objects. The type is defined in parent's <a href="#stack
    <Canvas pivot="64 64"/> <!-- assets/Canvas -->
 </Object>
 ```
+**pivot** - specifies position of (0, 0) pixel. If Canvas is animated there are multiple values seperated by comas, e.g., `64 64, 128 128`
+
 <h5>Image Assets</h5>
 
 Paint Object images are saved in Canvas property assets folder `(...)/assets/Canvas/`, e.g., `/scenes/0/objects/0/assets/Canvas/`.
 
 There is only a single image for not animated PaintSurface - `value.png`.
 For animated PaintSurface, image names correspond to the frames they are on, e.g., `0.png` for a keyframe on frame 0.
-
-<h4><a name="Sculpt Path Object">Sculpt Path Object</a></h4>
-
 
 
 <h3><a name="Properties">Properties</a></h3>
@@ -323,8 +353,6 @@ For animated PaintSurface, image names correspond to the frames they are on, e.g
 <h4><a name="Gradient">Gradient</a></h4>
 
 <h4><a name="Path">Path</a></h4>
-
-<h4><a name="Sculpt Path">Sculpt Path</a></h4>
 
 <h4><a name="Static Group Property">Static Group Property</a></h4>
 
