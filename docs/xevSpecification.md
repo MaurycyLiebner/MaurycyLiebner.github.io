@@ -238,9 +238,61 @@ There are many types of objects. The type is defined in parent's <a href="#stack
 
 <h4><a name="Path Object">Path Object</a></h4>
 
+<a href="#properties.xml">properties.xml</a>
+```xml
+<Object id="2" open="1">
+   <!-- object properties -->
+   <!-- Fill / Outline settings -->
+   <Paths open="1">
+      <Path closed="true" name="path" ctrlValues="* *;* *" mode="0" frames="* 0 *;* 5 *" ctrlModes="1;1"
+            values="* * 0 0 * * 2,* * -3.08571 162 * * 2,* * 172.8 157.371 * * 2,* * 169.714 0 * * 2;* * 0 0 * * 2,* * -3.08571 162 * * 2,* * 205.2 157.371 * * 2,* * 202.114 0 * * 2"/>
+   </Paths>
+</Object>
+```
+
 <h4><a name="Ellipse Object">Ellipse Object</a></h4>
 
+<a href="#properties.xml">properties.xml</a>
+```xml
+<Object id="2">
+   <!-- object properties -->
+   <!-- Fill / Outline settings -->
+   <TopLeft>
+      <X value="0"/>
+      <Y value="0"/>
+   </TopLeft>
+   <BottomRight>
+      <X value="266.9142857142856"/>
+      <Y value="180.5142857142857"/>
+   </BottomRight>
+   <RoundRadius>
+      <X value="0"/>
+      <Y value="0"/>
+   </RoundRadius>
+</Object>
+```
+
 <h4><a name="Rectangle Object">Rectangle Object</a></h4>
+
+<a href="#properties.xml">properties.xml</a>
+```xml
+<Object id="2">
+   <!-- object properties -->
+   <!-- Fill / Outline settings -->
+   <TopLeft>
+      <X value="0"/>
+      <Y value="0"/>
+   </TopLeft>
+   <BottomRight>
+      <X value="266.9142857142856"/>
+      <Y value="180.5142857142857"/>
+   </BottomRight>
+   <RoundRadius>
+      <X value="0"/>
+      <Y value="0"/>
+   </RoundRadius>
+</Object>
+```
 
 <h4><a name="Text Object">Text Object</a></h4>
 
@@ -248,17 +300,7 @@ There are many types of objects. The type is defined in parent's <a href="#stack
 ```xml
 <Object fontSlant="0" fontWeight="400" hAlign="1" fontSize="72" fontWidth="5" fontFamily="Arial" id="1" vAlign="32">
    <!-- object properties -->
-   <Fill type="1">
-      <Color mode="0">
-         <Red value="0"/>
-         <Green value="0"/>
-         <Blue value="0"/>
-         <Alpha value="1"/>
-      </Color>
-   </Fill>
-   <Outline type="0" stroke-linejoin="round" stroke-linecap="round">
-      <Width value="1"/>
-   </Outline>
+   <!-- Fill / Outline settings -->
    
    <Text value="example text"/>
    <Spacing>
@@ -351,6 +393,10 @@ For animated PaintSurface, image names correspond to the frames they are on, e.g
 <h4><a name="Color">Color</a></h4>
 
 <h4><a name="Gradient">Gradient</a></h4>
+
+<h4><a name="Fill">Fill</a></h4>
+
+<h4><a name="Outline">Outline</a></h4>
 
 <h4><a name="Path">Path</a></h4>
 
