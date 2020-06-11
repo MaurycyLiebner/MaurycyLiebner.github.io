@@ -240,15 +240,21 @@ There are many types of objects. The type is defined in parent's <a href="#stack
 
 <a href="#properties.xml">properties.xml</a>
 ```xml
-<Object id="2" open="1">
+<Object id="2">
    <!-- object properties -->
    <!-- Fill / Outline settings -->
-   <Paths open="1">
+   <Paths>
       <Path closed="true" name="path" ctrlValues="* *;* *" mode="0" frames="* 0 *;* 5 *" ctrlModes="1;1"
             values="* * 0 0 * * 2,* * -3.08571 162 * * 2,* * 172.8 157.371 * * 2,* * 169.714 0 * * 2;* * 0 0 * * 2,* * -3.08571 162 * * 2,* * 205.2 157.371 * * 2,* * 202.114 0 * * 2"/>
    </Paths>
 </Object>
 ```
+You can read more about 
+<a href="#Fill">Fill</a> and <a href="#Outline">Outline</a> settings.
+
+A signle Path **values** node has a format `c0x c0y p1x p1y c2x c2y m`, where **c0x** and **c0y** are coordinates of the first control point, **p1x** and **p1y** are coordinates of the node, **c1x** and **c1y** are coordinates of the second control point, and **m** is a control points mode (smooth (0), symmetric (1), or corner (2)).
+
+**c0x**, **c0y**, **c1x**, and **c1y** can have a value of `*` which means they are not enbled (have the same value as **p1x** /**p1y** node corrdinates).
 
 <h4><a name="Ellipse Object">Ellipse Object</a></h4>
 
@@ -388,7 +394,7 @@ For animated PaintSurface, image names correspond to the frames they are on, e.g
 
 <h3><a name="Properties">Properties</a></h3>
 
-<h4><a name="Transform">Transform</a></h4>
+<h4><a name="Numeric Property">Numeric Property</a></h4>
 
 <h4><a name="Color">Color</a></h4>
 
