@@ -30,10 +30,11 @@ The **ShaderEffect** encloses **Properties**, a **Script**, **glValues**, and a 
 
 <h3>Properties</h3>
 
-There are three types of properties:
+There are four types of properties:
 * **int** - integer properties
 * **float** - floating-point number properties
 * **vec2** - two-value float properties
+* **color** - four-value (red, green, blue, alpha) float properties
 
 All types of properties are animatable, meaning their values can change with time.
 All properties have to be defined inside **Properties** element, and use the **Property** tag name.
