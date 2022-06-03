@@ -6,15 +6,15 @@ Enve was created with flexibility and expandability in mind.
 
 <p align="center">
 <a href="https://github.com/MaurycyLiebner/enve" target="_blank">
-    <img src="https://image.flaticon.com/icons/png/512/25/25231.png" alt="enve on GitHub" height="64" border="10" hspace="20"/>
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="enve on GitHub" height="64" border="10" hspace="20"/>
 </a>
 &nbsp;&nbsp;&nbsp;
 <a href="https://twitter.com/enve2d" target="_blank">
-    <img src="https://image.flaticon.com/icons/png/512/187/187187.png" alt="enve on Twitter" height="64" border="10" hspace="20"/>
+    <img src="https://cdn-icons-png.flaticon.com/512/187/187187.png" alt="enve on Twitter" height="64" border="10" hspace="20"/>
 </a>
 &nbsp;&nbsp;&nbsp;
 <a href="https://www.youtube.com/channel/UCjvNO3xdIQs-cpgwSf0mX5Q" target="_blank">
-    <img src="https://image.flaticon.com/icons/png/512/187/187209.png" alt="enve on YouTube" height="64" border="10" hspace="20"/>
+    <img src="https://cdn-icons-png.flaticon.com/512/187/187209.png" alt="enve on YouTube" height="64" border="10" hspace="20"/>
 </a>
 &nbsp;&nbsp;&nbsp;
 <a href="https://www.patreon.com/enve" target="_blank">
@@ -33,12 +33,12 @@ Enve was created with flexibility and expandability in mind.
 <h1 align="center">Articles about enve</h1>
 <br/>
 <p align="center">
-      <a href="http://libregraphicsworld.org/blog/entry/introducing-enve-free-libre-2d-animation-tool" target="_blank">
-    <img src="https://pbs.twimg.com/profile_images/1460597571/lgworld_400x400.png" alt="Libre Graphics World" height="64" border="10" hspace="20"/>
+      <a href="https://librearts.org/2019/12/introducing-enve-free-libre-2d-animation-tool/" target="_blank">
+    <img src="https://pbs.twimg.com/profile_images/1345066733095280640/yua-5tdn_400x400.png" alt="Libre Arts (former Libre Graphics World)" height="64" border="10" hspace="20"/>
   </a>
   &nbsp;&nbsp;&nbsp;
   <a href="http://www.cgchannel.com/2020/01/check-out-promising-open-source-2d-animation-tool-enve/" target="_blank">
-    <img src="https://pbs.twimg.com/profile_images/417847522/cgchannel_400x400.jpg" alt="CG Channel" height="64" border="10" hspace="20"/>
+    <img src="https://pbs.twimg.com/profile_images/1381566871430905856/E1ux_Dmo_400x400.jpg" alt="CG Channel" height="64" border="10" hspace="20"/>
   </a>
 </p><br/>
 
